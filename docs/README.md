@@ -18,3 +18,7 @@ This is a baseline pattern for enforcing security in CI/CD pipelines to catch is
 - `safe_login()` fixes the issue using parameterized queries
 
 This shows how DevSecOps pipelines can detect issues early and how developers remediate them securely.
+
+## What to look for in the results
+- CodeQL may flag `insecure_login()` (intentionally vulnerable example)
+- `safe_login()` demonstrates the remediation using parameterized queries
