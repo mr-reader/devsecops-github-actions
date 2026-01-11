@@ -7,3 +7,13 @@ def insecure_login(username):
     query = f"SELECT * FROM users WHERE username = '{username}'"
     cursor.execute(query)
     return cursor.fetchall()
+
+    def safe_login(username):
+    conn = sqlite3.connect("users.db")
+    cursor = conn.cursor()
+    cursor.execute(
+        "SELECT * FROM users WHERE username = ?",
+        (username,)
+    )
+    return cursor.fetchall()
+
